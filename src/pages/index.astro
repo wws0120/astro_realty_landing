@@ -1,0 +1,59 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import Hero from '../components/hero.astro';
+import CoreValues from '../components/coreValues.astro';
+import About from '../components/about.astro';
+import About2 from '../components/about2.astro';
+import About3 from '../components/about3.astro';
+import Services from '../components/services.astro';
+import Services2 from '../components/services2.astro';
+import Team from '../components/team.astro';
+import FAQ from '../components/faq.astro';
+import Cta from '../components/cta.astro';
+import Testimonial from '../components/testimonial.astro';
+import ContactForm from '../components/contactForm.astro';
+
+const faqItems = [
+  {
+    question: 'What areas do you serve?',
+    answer:
+      'We primarily serve the greater metropolitan area and surrounding suburbs, but our reach extends to neighboring counties as well. Contact us for specific location inquiries.',
+  },
+  {
+    question: 'How long does the typical home buying process take?',
+    answer:
+      'The home buying process can vary, but typically takes 30-90 days from offer acceptance to closing. Factors like financing, inspections, and negotiations can affect the timeline.',
+  },
+  {
+    question: 'Do you handle both residential and commercial properties?',
+    answer:
+      'Yes, we have dedicated teams for both residential and commercial real estate. Our specialists are equipped to handle a wide range of property types and transactions.',
+  },
+  {
+    question: 'What sets your agency apart from others?',
+    answer:
+      'Our diverse team brings a wealth of experience and cultural understanding to every transaction. We pride ourselves on our innovative approach, personalized service, and deep community connections.',
+  },
+  {
+    question: 'How can I get started with selling my property?',
+    answer:
+      "To begin the selling process, contact us for a free property valuation. We'll assess your home's value, discuss your goals, and develop a tailored marketing strategy to maximize your property's potential.",
+  },
+];
+---
+
+<MainLayout title="Landing Page">
+  <Hero />
+  <CoreValues />
+  <About />
+  <About2 />
+  <About3 />
+  <Services />
+  <Services2 />
+  <Team />
+  <FAQ items={faqItems} />
+  <Cta />
+  <Testimonial />
+  <ContactForm />
+</MainLayout>

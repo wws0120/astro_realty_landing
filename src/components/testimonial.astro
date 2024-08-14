@@ -1,0 +1,127 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Icon } from 'astro-icon/components';
+import reviews from '../data/reviews';
+import SectionContainer from './sectionContainer.astro';
+---
+
+<section id="testimonial">
+  <SectionContainer>
+    <div class="">
+      <div class="text-center max-w-xl mx-auto">
+        <span
+          class="text-base font-semibold uppercase tracking-wide text-amber-700"
+          >Testimonials</span
+        >
+        <h2
+          class="text-center font-semibold text-3xl sm:text-4xl md:text-5xl text-slate-900 sm:leading-10 w-full mb-4"
+        >
+          What Our Clients Say
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 mt-14 items-center">
+      <div class="relative">
+        <div
+          data-aos="custom-fade-top"
+          class="swiper testi-swiper rounded-md relative px-1"
+        >
+          <div class="swiper-wrapper">
+            {
+              reviews.map((review) => (
+                <div class="swiper-slide">
+                  <div class="p-6 rounded-xl border border-default-200">
+                    <h3 class="text-xl font-semibold text-default-950">
+                      {review.title}
+                    </h3>
+                    <p class="text-base text-gray-600 font-normal mt-4 mb-6 text-muted">
+                      {review.content}
+                    </p>
+                    <div class="flex items-center gap-4">
+                      <div>
+                        <img
+                          src={review.image}
+                          class="h-12 rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h3 class="text-lg font-semibold text-primary">
+                          {review.author}
+                        </h3>
+                        <p class="text-sm text-slate-700 font-medium mt-1">
+                          {review.position}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-3 w-full relative mt-10">
+      <button class="testi-button-prev">
+        <div
+          class="h-11 w-11 rounded-full shadow border border-default-300 bg-default-100 text-default-900 hover:bg-slate-800 hover:border-slate-800 hover:text-white flex items-center justify-center transition-all duration-300"
+        >
+          <Icon class="h-6 w-6" name="mdi:navigate-before" />
+        </div>
+      </button>
+      <button class="testi-button-next">
+        <div
+          class="h-11 w-11 rounded-full shadow border border-default-300 bg-default-100 text-default-900 hover:bg-slate-800 hover:border-slate-800 hover:text-white flex items-center justify-center transition-all duration-300"
+        >
+          <Icon class="h-6 w-6" name="mdi:navigate-next" />
+        </div>
+      </button>
+    </div>
+  </SectionContainer>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+
+  document.addEventListener('astro:page-load', swiper);
+
+  var swiper = new Swiper('.testi-swiper', {
+    // slidesPerView: 5,
+    centeredSlides: true,
+    spaceBetween: 24,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    observer: true,
+    observeParents: true,
+    parallax: true,
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.testi-button-next',
+      prevEl: '.testi-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      991: {
+        slidesPerView: 2.5,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>

@@ -1,0 +1,96 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionContainer from './sectionContainer.astro';
+---
+
+<section>
+  <SectionContainer>
+    <div class="grid lg:grid-cols-2 items-center gap-6">
+      <div data-aos="custom-fade-left">
+        <div>
+          <span class="text-amber-600 font-bold text-tiny inline-block mb-2"
+            >OUR APPROACH</span
+          >
+        </div>
+        <h2
+          class="font-semibold text-[24px] sm:text-[30px] leading-[1.3888] xl:text-[35px] capitalize mb-[50px]"
+        >
+          Expert Real Estate Solutions: Your Journey Starts Here
+        </h2>
+        <p class="text-base font-normal text-muted mt-6">
+          Navigating the real estate market can be complex, but with our
+          comprehensive services, you'll find it straightforward and rewarding.
+          Whether buying, selling, or investing, our team of professionals is
+          here to guide you every step of the way.
+        </p>
+
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-8 mt-9">
+          <div class="">
+            <div class="flex items-center justify-start">
+              <div
+                class="items-center justify-center flex bg-green-50 rounded-full h-20 w-20 border border-dashed border-lime-100"
+              >
+                <Icon
+                  class="w-8 h-8 text-teal-600"
+                  name="mdi:discussion-outline"
+                />
+              </div>
+            </div>
+            <h1 class="text-xl font-semibold pt-6">Consultation</h1>
+            <p class="text-base font-normal mt-2">
+              Discuss your real estate goals and get personalized advice from
+              our experts.
+            </p>
+          </div>
+
+          <div class="">
+            <div class="flex items-center justify-start">
+              <div
+                class="items-center justify-center flex bg-red-50 rounded-full h-20 w-20 border border-dashed border-red-100"
+              >
+                <Icon
+                  class="w-8 h-8 text-rose-600"
+                  name="mdi:file-document-box-multiple-outline"
+                />
+              </div>
+            </div>
+            <h1 class="text-xl font-semibold pt-6">Strategy Development</h1>
+            <p class="text-base text-gray-600 font-normal mt-2">
+              We create a tailored plan to achieve your objectives in the
+              current market.
+            </p>
+          </div>
+
+          <div class="">
+            <div class="flex items-center justify-start">
+              <div
+                class="items-center justify-center flex bg-sky-50 rounded-full h-20 w-20 border border-dashed"
+              >
+                <Icon
+                  class="w-8 h-8 text-blue-700"
+                  name="tdesign:undertake-transaction"
+                />
+              </div>
+            </div>
+            <h1 class="text-xl font-semibold pt-6">Execution</h1>
+            <p class="text-base text-gray-600 font-normal mt-2">
+              Our team handles negotiations, paperwork, and logistics for a
+              smooth transaction.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        data-aos="custom-fade-right"
+        class="w-full h-full rounded-xl overflow-hidden"
+      >
+        <img
+          src="/images/agency002.webp"
+          class="h-full shadow-xl object-cover"
+          alt="feature-image"
+        />
+      </div>
+    </div>
+  </SectionContainer>
+</section>

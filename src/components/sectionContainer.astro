@@ -1,0 +1,9 @@
+---
+const { padding = 'py-8 md:py-20 px-2 sm:px-4 lg:px-12' } = Astro.props;
+---
+
+<div class={`${padding} `}>
+  <div class="container mx-auto">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,53 @@
+---
+import SectionContainer from './sectionContainer.astro';
+---
+
+<div class="bg-gradient-to-b from-white via-teal-50 to-teal-100">
+  <SectionContainer>
+    <div
+      class="container w-full lg:gap-5 grid grid-cols-1 justify-center lg:grid-cols-2"
+    >
+      <div
+        data-aos="custom-fade-right"
+        class="col-span-1 items-center justify-end lg:flex lg:order-2"
+      >
+        <img
+          class="w-full object-cover rounded-2xl"
+          src="/images/hero001.webp"
+          alt="header image"
+        />
+      </div>
+      <div
+        data-aos="custom-fade-left"
+        class="col-span-1 mb-4 mx-auto flex flex-col justify-center text-center w-11/12 lg:w-full lg:justify-center mt-16 lg:mt-0 lg:text-left lg:order-1"
+      >
+        <div class="flex items-center justify-center lg:justify-start">
+          <h4
+            class="text-sm font-bold text-amber-600 tracking-widest text-primary"
+          >
+            PREMIUM REAL ESTATE SERVICES
+          </h4>
+        </div>
+        <h1
+          class="mb-8 text-2xl sm:text-4xl font-extrabold leading-tight text-dark-grey-900 lg:text-5xl xl:w-11/12 xl:text-6xl"
+        >
+          Elevate Your Real Estate Experience with Our Expertise
+        </h1>
+        <p
+          class="mb-10 text-base font-medium leading-7 text-dark-grey-600 xl:w-3/4"
+        >
+          Achieve your property goals with our expert guidance. Our professional
+          team offers comprehensive, responsive, and trend-aware real estate
+          solutions for buyers, sellers, and investors.
+        </p>
+        <div class="flex flex-col items-center lg:flex-row">
+          <a
+            href="#contact"
+            class="py-3 px-5 w-full lg:w-auto text-white font-semibold leading-6 bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 rounded-md"
+            >Get Started !
+          </a>
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+</div>

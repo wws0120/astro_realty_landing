@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionContainer from './sectionContainer.astro';
+
+const features = [
+  {
+    title: 'Our Vision',
+    description:
+      'To be the most trusted and innovative real estate partner, shaping communities and fulfilling dreams of homeownership across America.',
+    icon: 'mdi:house-find-outline',
+  },
+  {
+    title: 'Our Mission',
+    description:
+      'To deliver exceptional real estate services that drive property value, enhance living experiences, and secure financial futures for our clients.',
+    icon: 'mdi:handshake-outline',
+  },
+  {
+    title: 'Our Values',
+    description:
+      'To embody excellence, integrity, and diversity, while prioritizing client-centric solutions and continuous market insight for lasting impact in real estate.',
+    icon: 'mdi:scale-balance',
+  },
+];
+---
+
+<section class="w-full bg-teal-100">
+  <SectionContainer>
+    <div class="mb-14 xl:mb-20">
+      <div class="mx-auto max-w-[636px]">
+        <h1
+          class="text-center font-semibold text-3xl sm:text-4xl md:text-5xl text-slate-900 sm:leading-10 w-full mb-4"
+        >
+          Realizing Property Dreams
+        </h1>
+        <h2
+          class="font-poppins font-normal text-gray-600 text-base md:text-lg leading-8 mt-5 text-center"
+        >
+          Building Trust and Excellence in Real Estate
+        </h2>
+      </div>
+    </div>
+
+    <div
+      data-aos="custom-fade-top"
+      class="grid gap-y-10 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        features.map((feature, index) => (
+          <div
+            class="relative flex flex-col items-center gap-[30px] px-4 text-center after:absolute after:left-full after:top-1/2 after:hidden after:h-[120px] after:w-px after:-translate-y-1/2 after:bg-ColorBlack/10 last:after:hidden xl:px-[30px] xl:after:block"
+            data-jos_animation="fade-left"
+            data-jos_delay={index * 0.3}
+          >
+            <Icon class="h-[60px] w-auto text-amber-600" name={feature.icon} />
+            <div>
+              <div class="mb-[15px] text-2xl font-semibold capitalize leading-[1.33] -tracking-[0.5px] text-black xl:text-2xl">
+                {feature.title}
+              </div>
+              <p>{feature.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </SectionContainer>
+</section>

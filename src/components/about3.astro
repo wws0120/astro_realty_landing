@@ -1,0 +1,62 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionContainer from './sectionContainer.astro';
+---
+
+<section class="bg-teal-50">
+  <SectionContainer>
+    <div class="grid grid-cols-12 gap-7 mb-[-30px] items-center">
+      <div
+        data-aos="custom-fade-left"
+        class="relative col-span-12 lg:col-span-6 rounded-lg overflow-hidden"
+      >
+        <img
+          class="mx-auto w-full object-cover rounded-lg"
+          src="/images/about003.webp"
+          alt="about image"
+        />
+      </div>
+      <div
+        data-aos="custom-fade-left"
+        class="col-span-12 lg:col-span-6 mb-[30px]"
+      >
+        <span class="text-amber-600 font-bold inline-block mb-2"
+          >Premier Real Estate Services</span
+        >
+        <h2
+          class="font-semibold text-[24px] sm:text-[30px] leading-[1.3888] xl:text-[35px] capitalize mb-[50px]"
+        >
+          From Cost-Effective Solutions to Thorough Market Insights, We Ensure a
+          Smooth and Timely Process
+        </h2>
+
+        <ul class="list-none space-y-4">
+          <li class="flex items-center">
+            <Icon
+              class="w-6 h-6 mr-1.5 text-amber-600"
+              name="mdi:house-circle-outline"
+            /><span>Expert Handling of Property Transactions</span>
+          </li>
+          <li class="flex items-center">
+            <Icon
+              class="w-6 h-6 mr-1.5 text-amber-600"
+              name="mdi:house-circle-outline"
+            /><span>Cost-Effective Real Estate Solutions</span>
+          </li>
+          <li class="flex items-center">
+            <Icon
+              class="w-6 h-6 mr-1.5 text-amber-600"
+              name="mdi:house-circle-outline"
+            /><span>Thorough Market Analysis and Property Evaluation</span>
+          </li>
+          <li class="flex items-center">
+            <Icon
+              class="w-6 h-6 mr-1.5 text-amber-600"
+              name="mdi:house-circle-outline"
+            /><span>Efficient Services with Timely Communication</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </SectionContainer>
+</section>

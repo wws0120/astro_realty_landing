@@ -1,0 +1,104 @@
+---
+import SectionContainer from './sectionContainer.astro';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="bg-gray-100">
+  <SectionContainer>
+    <div class="text-center pb-20">
+      <p class="text-gray-500 text-lg uppercase leading-tight mb-4">
+        start with the basics
+      </p>
+      <h1
+        class="text-center font-semibold text-3xl sm:text-4xl md:text-5xl text-slate-900 sm:leading-10 w-full mb-4"
+      >
+        Frequently Asked Questions
+      </h1>
+    </div>
+    <div data-aos="custom-fade-top" class="w-10/12 mx-auto">
+      <ul>
+        {
+          items.map((item, index) => (
+            <li class="py-6 border-gray-200 border-solid border-b">
+              <div class="flex justify-between items-center">
+                <h3 class="text-gray-800 text-2xl w-10/12">{item.question}</h3>
+                <div data-menu class="cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-circle-plus"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#A0AEC0"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-label="Open"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <circle cx="12" cy="12" r="9" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                    <line x1="12" y1="9" x2="12" y2="15" />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="hidden icon icon-tabler icon-tabler-circle-minus"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#A0AEC0"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-label="Close"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <circle cx="12" cy="12" r="9" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                  </svg>
+                </div>
+              </div>
+              <p class="hidden pt-5 text-gray-800 bg-gray-100 text-lg rounded-b-lg">
+                {item.answer}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </SectionContainer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let elements = document.querySelectorAll('[data-menu]');
+    for (let i = 0; i < elements.length; i++) {
+      let main = elements[i];
+      main.addEventListener('click', function () {
+        let element = main.parentElement.parentElement;
+        let indicators = main.querySelectorAll('svg');
+        let child = element.querySelector('p');
+        child.classList.toggle('hidden');
+        if (child.classList.contains('hidden')) {
+          indicators[0].style.display = 'block';
+          indicators[1].style.display = 'none';
+        } else {
+          indicators[0].style.display = 'none';
+          indicators[1].style.display = 'block';
+        }
+      });
+    }
+  });
+</script>
